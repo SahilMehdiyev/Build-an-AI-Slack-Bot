@@ -1,7 +1,8 @@
 import pathlib 
 from functools import lru_cache
 
-from decouple import Config, Repositoryenv
+from decouple import Config, RepositoryEnv
+from decouple import config
 
 
 THIS_DIR = pathlib.Path(__file__).resolve().parent
@@ -14,8 +15,10 @@ REPO_DIR_ENV = REPO_DIR / '.env'
 @lru_cache
 def get_config():
     if BASE_DIR_ENV.exists():
-        return Config(Repositoryenv(BASE_DIR_ENV))
-    return
+        return Config(RepositoryEnv(BASE_DIR_ENV))
+    if REPO_DIR_ENV.exists():
+        return Config(RepositoryEnv(REPO_DIR_ENV))
+    return config
 
 config = get_config()
 

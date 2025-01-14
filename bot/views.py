@@ -3,7 +3,13 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
+import helpers
 
+SLACK_BOT_OAUTH_TOKEN = helpers.config(
+    'SLACK_BOT_OAUTH_TOKEN',
+    default=None,
+    cast=str
+)
 
 @csrf_exempt
 @require_POST
