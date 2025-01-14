@@ -27,5 +27,5 @@ def slack_event_endpoint(request):
         challenge = json_data.get('challenge')  
         if challenge is None:
             return HttpResponse('Not Allowed', status=400)
-    
-    return HttpResponse(challenge, status=200)
+        return HttpResponse(challenge, status=200)
+    return HttpResponse("Success", status=200)
