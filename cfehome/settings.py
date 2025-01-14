@@ -29,11 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'd25b-31-171-71-178.ngrok-free.app'
+    'bee0-37-61-118-56.ngrok-free.app'
 ]
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
