@@ -37,7 +37,6 @@ def slack_event_endpoint(request):
         return HttpResponse('Invalid JSON', status=400)
     
     data_type = json_data.get('type')
-    print(data_type, json_data.keys(),json_data)
     allowed_data_type = [
         'url_verification',
         'event_callback'
